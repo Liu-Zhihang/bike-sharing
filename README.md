@@ -9,7 +9,17 @@ As a supplement to the existing public transit system, bike-sharing is considere
 ![Research Framework](Figures/Fig1_Research_framework.jpg)
 
 ## Visualization:
-We've developed an interactive visualization website for this study which can be accessed [here](https://zhihangliu.cn/projects/Sharingbike/Morning_bike_sharing.html).
+The interactive map is published at [zhihangliu.cn](https://zhihangliu.cn/projects/Sharingbike/Morning_bike_sharing.html). The same pages are in [`visualization/`](visualization/).
+
+The original Kepler export was about 100MB per peak and often failed to open in a browser. `visualization/assets/data/features_data_morning.lite.json` (about 6MB) and `features_data_evening.lite.json` (about 4MB) keep the first-mile and last-mile OD flows, plus simplified metro and bus lines. Bus-stop points are omitted. The basemap is CARTO Dark Matter, so the page does not need a Mapbox token.
+
+Preview locally from the repository root:
+
+```bash
+python -m http.server 8080
+```
+
+Then open `http://127.0.0.1:8080/visualization/Morning_bike_sharing.html`.
 
 ![Website Preview](website.gif)
 
